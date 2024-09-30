@@ -4,7 +4,7 @@
     "description": "An action that retries a GitHub Actions workflow.",
     "version": "3.5.0",
     "scripts": {
-        "build": "rm -rf dist && ncc build src/Main.js -o dist && ncc build src/Pre.js -o dist/Pre && ncc build src/Post.js -o dist/Post"
+        "build": "rm -rf dist && ncc build src/Main.js -o dist && ncc build src/Pre.js -o dist/pre && mv dist/pre/index.js dist/pre.js && rm -rf dist/pre && ncc build src/Post.js -o dist/post && mv dist/post/index.js dist/post.js && rm -rf dist/post"
     },
     "repository": {
         "type": "git",

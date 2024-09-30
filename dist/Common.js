@@ -1,6 +1,6 @@
 const core = require( '@actions/core' );
 if( typeof wTools === 'undefined' )
-require( '../node_modules/Joined.s' );
+require( '../Joined.s' );
 const _ = wTools;
 const GithubActionsParser = require( 'github-actions-parser' );
 

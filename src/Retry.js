@@ -1,7 +1,7 @@
 const core = require( '@actions/core' );
 const axios = require('axios');
 const common = require( './Common.js' );
-require( '../node_modules/Joined.s' );
+require( '../Joined.s' );
 const _ = wTools;
 
 //

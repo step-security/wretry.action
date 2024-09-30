@@ -53,4 +53,4 @@ outputs:
     value: '${{ toJSON( steps.retry.outputs ) }}'
 runs:
   using: node20
-  main: "dist/Pre/index.js"
+  main: "dist/pre.js"
