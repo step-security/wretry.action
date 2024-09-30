@@ -1,0 +1,14 @@
+
+name : pr
+
+on :
+  pull_request :
+    branches : [ main ]
+
+jobs :
+
+  job_context_test :
+    uses : step-security/wretry.action/.github/workflows/JobContextActionTest.yml@main
+
+  matrix_context_test :
+    uses : step-security/wretry.action/.github/workflows/MatrixContextActionTest.yml@main

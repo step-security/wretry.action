@@ -1,0 +1,22 @@
+
+name : push
+
+on :
+  push :
+    branches : [ main ]
+
+jobs :
+
+  job_context_test :
+    if : |
+      !startsWith( github.event.head_commit.message, 'version' )
+      && !startsWith( github.event.head_commit.message, '.' )
+      && !startsWith( github.event.head_commit.message, 'Merge' )
+    uses : step-security/wretry.action/.github/workflows/JobContextActionTest.yml@main
+
+  matrix_context_test :
+    if : |
+      !startsWith( github.event.head_commit.message, 'version' )
+      && !startsWith( github.event.head_commit.message, '.' )
+      && !startsWith( github.event.head_commit.message, 'Merge' )
+    uses : step-security/wretry.action/.github/workflows/MatrixContextActionTest.yml@main

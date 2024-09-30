@@ -1,0 +1,24 @@
+{
+    "name": "wretry-action",
+    "main": "dist/index.js",
+    "description": "An action that retries a GitHub Actions workflow.",
+    "version": "3.5.0",
+    "scripts": {
+        "build": "rm -rf dist && ncc build src/Main.js -o dist && ncc build src/Pre.js -o dist/Pre && ncc build src/Post.js -o dist/Post"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/step-security/wretry.action.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/step-security/wretry.action/issues"
+    },
+    "homepage": "https://github.com/step-security/wretry.action#readme",
+    "dependencies": {
+        "@actions/core": "^1.10.1",
+        "@actions/github": "^5.1.1",
+        "axios": "^1.6.2",
+        "@vercel/ncc": "^0.38.1"
+    }
+}
