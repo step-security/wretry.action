@@ -3,15 +3,11 @@ about:
   version: 3.5.0
   description: Retries an Github Action step on failure
   enabled: 0
-  author: Kostiantyn Wandalen <wandalen@obox.systems>
-  contributors:
-    - Kostiantyn Wandalen <wandalen@obox.systems>
-    - Dmytro Kryvoruchko <dm.vict.kr@gmail.com>
   license: MIT
   npm.scripts:
     postinstall: will .build compile
     test: wtest .run "test/**"
-  npm.homepage: 'https://github.com/Wandalen/wretry.action#action::wretry.action'
+  npm.homepage: 'https://github.com/step-security/wretry.action#action::wretry.action'
   keywords:
     - action
     - retry
@@ -21,10 +17,10 @@ about:
     - njs >= 10.0.0
 path:
   origins:
-    - 'git+https:///github.com/Wandalen/wretry.action'
+    - 'git+https:///github.com/step-security/wretry.action'
   entry: src/Main.js
-  repository: 'git+https:///github.com/Wandalen/wretry.action'
-  bugtracker: 'https:///github.com/Wandalen/wretry.action/issues'
+  repository: 'git+https:///github.com/step-security/wretry.action'
+  bugtracker: 'https:///github.com/step-security/wretry.action/issues'
   in: .
   out: out
   temp:
@@ -89,9 +85,9 @@ path:
   npm.proto.entry:
     - src/Main.js
 submodule:
-  # '@actions/core':
-  #   path: 'npm:///@actions/core!1.10.0'
-  #   enabled: 0
+  '@actions/core':
+    path: 'npm:///@actions/core!1.10.0'
+    enabled: 0
   github-actions-parser:
     path: 'npm:///github-actions-parser!dmvict/github-actions-parser'
     enabled: 0
@@ -194,9 +190,6 @@ reflector:
           - !<tag:yaml.org,2002:js/regexp> /yaml-ast-parser/
           - !<tag:yaml.org,2002:js/regexp> /Joined.s/
 step:
-  compile.ncc:
-    shell: 'ncc build src/Main.js -o dist'
-
   join.sources:
     inherit: sources.join
     entryPath: node_modules/wgittools/proto/wtools/amid/l3/git/entry/GitTools.ss
@@ -282,7 +275,7 @@ step:
     entryPath: 'path::entry.proto.no.tests'
     packagePath: package.json
     filesPath: '{path::proto}/**'
-    # withDisabledSubmodules: 1
+    withDisabledSubmodules: 1
     criterion:
       content:
         - proto
@@ -486,6 +479,3 @@ build:
       - npm.install
       - 'build::compile'
       - clean.modules
-  ncc:
-    steps:
-      - compile.ncc
