@@ -52,5 +52,7 @@ outputs:
     description: A pretty print JSON map with outputs from the wrapped action.
     value: '${{ toJSON( steps.retry.outputs ) }}'
 runs:
-  using: node20
-  main: "dist/index.js"
+  using: 'node20'
+  pre: 'src/Pre.js'
+  main: 'src/Main.js'
+  post: 'src/Post.js'

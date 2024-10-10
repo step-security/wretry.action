@@ -1,6 +1,6 @@
 const core = require( '@actions/core' );
 if( typeof wTools === 'undefined' )
-require( '../Joined.s' );
+require( '../node_modules/Joined.s' );
 const _ = wTools;
 const GithubActionsParser = require( 'github-actions-parser' );
 
@@ -66,7 +66,7 @@ function actionClone( localPath, remotePath )
     });
     con.then( () =>
     {
-      if( remotePath.tag !== 'main' )
+      if( remotePath.tag !== 'master' )
       return _.git.tagLocalChange
       ({
         localPath,

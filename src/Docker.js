@@ -1,6 +1,6 @@
 const core = require( '@actions/core' );
 if( typeof wTools === 'undefined' )
-require( '../Joined.s' );
+require( '../node_modules/Joined.s' );
 const _ = wTools;
 const ChildProcess = require( 'child_process' );
 let common = require( './Common.js' );
